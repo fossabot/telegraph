@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ site.github.project_tagline }}</title>
+
+    <link rel="shortcut icon" href="{{ "/assets/favicon.ico" | absolute_url }}">
+    <meta name="author" content="{{ site.github.owner_name }}">
+
+    <meta property="og:title" content="{{ site.github.project_tagline }}">
+    <meta property="twitter:title" content="{{ site.github.project_tagline }}">
+    <meta name="description" content="by {{ site.github.owner_name }}">
+    <meta property="og:description" content="by {{ site.github.owner_name }}">
+
+    <link rel="canonical" href="{{ site.github.url }}">
+    <link rel="stylesheet" href="{{ "/assets/style.css" | absolute_url }}">
+  </head>
+  <body>
+    <div class="page_wrap">
+      <div class="page">
+        <main class="article">
+          <header class="article_header">
+            <h1>{{ site.github.project_tagline }}</h1>
+          </header>
+          <address>
+            <a rel="author" href="//{{ site.github.owner_name }}.github.io">{{ site.github.owner_name }}</a>
+          </address>
+          <article class="article_content">
+            {{ content }}
+          </article>
+          <aside class="article_buttons">
+            <a class="button share_button" href="{{ site.github.repository_url }}" target="_blank">GitHub</a>
+          </aside>
+        </main>
+      </div>
+    </div>
+    {% include analytics.html yaMetrika="21389077" gAnalytics="UA-79389304-4" %}
+  </body>
+</html>
