@@ -6,10 +6,10 @@ layout: default
 **Telegra.ph** is a minimalist publishing tool that allows you to create richly formatted posts and push them to the Web in just a click. **Telegraph** posts also get beautiful [Instant View](https://telegram.org/blog/instant-view) pages on **Telegram**.
 
 At first, you need to download/update and install it:  
-`$ go get -u github.com/toby3d/telegraph`
+`$ go get -u github.com/toby3d/go-telegraph`
 
 And import it in your Go code:  
-`import "github.com/toby3d/telegraph"`
+`import "github.com/toby3d/go-telegraph"`
 
 #### [1. Methods](#available-methods)
 - [CreateAccount]
