@@ -69,14 +69,12 @@ Telegraph account.
 #### GetAccountInfo
 Use this method to get information about a Telegraph account. Returns an [Account] object on success.
 
-- **fields** (*\[\]string*)  
+- **fields** (*...string*)  
 List of account fields to return. Available fields: *short_name*, *author_name*, *author_url*, *auth_url*, *page_count*.
 
 > **Sample code**
 > 
->     fields := []string{"short_name", "page_count"}
->     
->     info, err := account.GetAccountInfo(fields)
+>     info, err := account.GetAccountInfo("short_name", "page_count")
 
 #### RevokeAccessToken
 Use this method to revoke access_token and generate a new one, for example, if the user would like to reset all connected sessions, or you have reasons to believe the token was compromised. On success, returns an [Account] object with new `access_token` and `auth_url` fields.
