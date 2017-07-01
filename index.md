@@ -45,12 +45,10 @@ Telegraph account.
 
 > **Sample code**
 > 
->      var account = &telegraph.Account{
+>     newAccount, err := telegraph.CreateAccount(&telegraph.Account{
 >         ShortName:  "Sandbox",
 >         AuthorName: "Anonymous",
->     }
->     
->     account, err = telegraph.CreateAccount(account)
+>     })
 
 #### EditAccountInfo
 Use this method to update information about a Telegraph account. Pass only the parameters that you want to edit. On success, returns an [Account] object with the default fields.
@@ -60,12 +58,10 @@ Telegraph account.
 
 > **Sample code**
 > 
->     var update = &telegraph.Account{
+>     updatedAccount, err := account.EditAccountInfo(&telegraph.Account{
 >         ShortName:  "Sandbox",
 >         AuthorName: "Anonymous",
->     }
->     
->     account, err = account.EditAccountInfo(update)
+>     })
 
 #### GetAccountInfo
 Use this method to get information about a Telegraph account. Returns an [Account] object on success.
@@ -75,14 +71,14 @@ List of account fields to return. Available fields: *short_name*, *author_name*,
 
 > **Sample code**
 > 
->     info, err := account.GetAccountInfo("short_name", "page_count")
+>     accountInfo, err := account.GetAccountInfo("short_name", "page_count")
 
 #### RevokeAccessToken
 Use this method to revoke access_token and generate a new one, for example, if the user would like to reset all connected sessions, or you have reasons to believe the token was compromised. On success, returns an [Account] object with new `access_token` and `auth_url` fields.
 
 > **Sample code**
 > 
->     account, err = account.RevokeAccessToken()
+>     updatedAccount, err := account.RevokeAccessToken()
 
 #### CreatePage
 Use this method to create a new Telegraph page. On success, returns a [Page] object.
@@ -92,16 +88,13 @@ Page on Telegraph.
 - **returnContent** (*bool*)  
 If *true*, a `content` field will be returned in the [Page] object (see: [Content format](#content-format)).
 
-
 > **Sample code**
 > 
->     var page = &telegraph.Page{
+>     newPage, err := account.CreatePage(&telegraph.Page{
 >         Title:      "Sample Page",
 >         AuthorName: account.AuthorName,
 >         Content:    content,
->     }
->     
->     page, err = account.CreatePage(page, true)
+>     }, true)
 
 
 #### EditPage
@@ -114,13 +107,11 @@ If *true*, `content` field will be returned in [Page] object.
 
 > **Sample code**
 > 
->     var page = &telegraph.Page{
+>     updatedPage, err := account.EditPage(&telegraph.Page{
 >         Title:      "Sample Page",
 >         AuthorName: account.AuthorName,
 >         Content:    content,
->     }
->     
->     page, err = account.EditPage(page, true)
+>     }, true)
 
 #### GetPage
 Use this method to get a Telegraph page. Returns a [Page] object on success.
@@ -253,7 +244,7 @@ The Telegraph API uses a DOM-based format to represent the content of the page. 
             </figcaption>
         </figure>
     ```
-
+    
     content, err := telegraph.ContentFormat(data)
 
 [CreateAccount]: #createaccount
