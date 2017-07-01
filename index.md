@@ -40,16 +40,17 @@ Library used **POST** HTTP method. The response contains a JSON object, which al
 #### CreateAccount
 Use this method to create a new Telegraph account. Most users only need one account, but this can be useful for channel administrators who would like to keep individual author names and profile links for each of their channels. On success, returns an [Account] object with the regular fields and an additional `access_token` field.
 
-- **shortName** (*string, 1-32 characters*)  
-*Required.* Account name, helps users with several accounts remember which they are currently using. Displayed to the user above the "Edit/Publish" button on Telegra.ph, other users don't see this name.
-- **authorName** (*string, 0-128 characters*)  
-Default author name used when creating new articles.
-- **authorURL** (*string, 0-512 characters*)  
-Default profile link, opened when users click on the author's name below the title. Can be any link, not necessarily to a Telegram profile or channel.
+- **account** (*[Account]*)  
+Telegraph account.
 
 > **Sample code**
 > 
->     account, err := telegraph.CreateAccount("Sandbox", "Anonymous", "")
+>      var account = &telegraph.Account{
+>         ShortName:  "Sandbox",
+>         AuthorName: "Anonymous",
+>     }
+>     
+>     account, err = telegraph.CreateAccount(account)
 
 #### EditAccountInfo
 Use this method to update information about a Telegraph account. Pass only the parameters that you want to edit. On success, returns an [Account] object with the default fields.
