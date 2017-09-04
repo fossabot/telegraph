@@ -365,3 +365,8 @@ p video {
 .tooltip {
 	display: none;
 }
+
+.article address time::before {
+    content: '•';
+    padding: 0px 7px;
+}
