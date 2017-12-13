@@ -82,7 +82,10 @@
             </ul>
             <blockquote>
               <p><strong>Sample code</strong></p>
-<pre class="highlight"><code>account, _ := telegraph.CreateAccount(&amp;telegraph.Account{ShortName: "Sandbox", AuthorName: "Anonymous"})</code></pre>
+<pre class="highlight"><code>account, _ := telegraph.CreateAccount(&amp;telegraph.Account{
+    ShortName: "Sandbox",
+    AuthorName: "Anonymous",
+})</code></pre>
             </blockquote>
             <h4 id="editaccountinfo">EditAccountInfo</h4>
             <p>Use this method to update information about a Telegraph account. Pass only the parameters that you want to edit. On success, returns an <a href="#account">Account</a> object with the default fields.</p>
@@ -91,7 +94,10 @@
             </ul>
             <blockquote>
               <p><strong>Sample code</strong></p>
-<pre class="highlight"><code>account, _ = account.EditAccountInfo(&amp;telegraph.Account{ShortName: "Sandbox", AuthorName: "Anonymous"})</code></pre>
+<pre class="highlight"><code>account, _ = account.EditAccountInfo(&amp;telegraph.Account{
+    ShortName: "Sandbox",
+    AuthorName: "Anonymous",
+})</code></pre>
             </blockquote>
             <h4 id="getaccountinfo">GetAccountInfo</h4>
             <p>Use this method to get information about a Telegraph account. Returns an <a href="#account">Account</a> object on success.</p>
@@ -116,7 +122,11 @@
               </ul>
             <blockquote>
               <p><strong>Sample code</strong></p>
-<pre class="highlight"><code>page, _ := account.CreatePage(&amp;telegraph.Page{Title: "Sample Page", AuthorName: account.AuthorName, Content: content}, true)</code></pre>
+<pre class="highlight"><code>page, _ := account.CreatePage(&amp;telegraph.Page{
+    Title: "Sample Page",
+    AuthorName: account.AuthorName,
+    Content: content,
+}, true)</code></pre>
             </blockquote>
               <h4 id="editpage">EditPage</h4>
               <p>Use this method to edit an existing Telegraph page. On success, returns a <a href="#page">Page</a> object.</p>
@@ -126,7 +136,11 @@
               </ul>
             <blockquote>
               <p><strong>Sample code</strong></p>
-<pre class="highlight"><code>page, _ := account.EditPage(&amp;telegraph.Page{Title: "Sample Page", AuthorName: account.AuthorName, Content: content}, true)</code></pre>
+<pre class="highlight"><code>page, _ := account.EditPage(&amp;telegraph.Page{
+    Title: "Sample Page",
+    AuthorName: account.AuthorName,
+    Content: content,
+}, true)</code></pre>
             </blockquote>
             <h4 id="getpage">GetPage</h4>
             <p>Use this method to get a Telegraph page. Returns a <a href="#page">Page</a> object on success.</p>
