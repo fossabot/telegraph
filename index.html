@@ -152,14 +152,14 @@
             <p>Use this method to get the number of views for a Telegraph article. Returns a <a href="#pageviews">PageViews</a> object on success. By default, the total number of page views will be returned.</p>
             <ul>
               <li><strong>path</strong> (<em>string</em>)<br/><em>Required.</em> Path to the Telegraph page (in the format <code>Title-12-31</code>, where 12 is the month and 31 the day the article was first published).</li>
-              <li><strong>hour</strong> (<em>int, 0-24 or -1</em>)<br/>If passed, the number of page views for the requested hour will be returned.</li>
-              <li><strong>day</strong> (<em>int, 1-31 or 0</em>)<br/><em>Required if hour is passed.</em> If passed, the number of page views for the requested day will be returned.</li>
-              <li><strong>month</strong> (<em>int, 1-12 or 0</em>)<br/><em>Required if day is passed.</em> If passed, the number of page views for the requested month will be returned.</li>
               <li><strong>year</strong> (<em>int, 2000-2100 or 0</em>)<br/><em>Required if month is passed.</em> If passed, the number of page views for the requested year will be returned.</li>
+              <li><strong>month</strong> (<em>int, 1-12 or 0</em>)<br/><em>Required if day is passed.</em> If passed, the number of page views for the requested month will be returned.</li>
+              <li><strong>day</strong> (<em>int, 1-31 or 0</em>)<br/><em>Required if hour is passed.</em> If passed, the number of page views for the requested day will be returned.</li>
+              <li><strong>hour</strong> (<em>int, 0-24 or -1</em>)<br/>If passed, the number of page views for the requested hour will be returned.</li>
             </ul>
             <blockquote>
               <p><strong>Sample code</strong></p>
-<pre class="highlight"><code>views, _ := telegraph.GetViews("Sample-Page-12-15", -1, 0, 12, 2016)</code></pre>
+<pre class="highlight"><code>views, _ := telegraph.GetViews("Sample-Page-12-15", 2016, 12, 0, -1)</code></pre>
             </blockquote>
             <h3 id="available-types">Available types</h3>
             <p>All types used in the Telegraph API responses are represented as JSON-objects. Optional fields may be <code>nil</code> when irrelevant.</p>
